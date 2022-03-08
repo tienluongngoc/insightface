@@ -9,7 +9,7 @@ from retinaface import RetinaFace
 thresh = 0.8
 scales = [1024, 1980]
 
-count = 1
+count = 100
 
 gpuid = 0
 detector = RetinaFace('./model/R50', 0, gpuid, 'net3')
@@ -33,12 +33,15 @@ print('im_scale', im_scale)
 scales = [im_scale]
 flip = False
 
+import time
 for c in range(count):
+    st = time.time()
     faces, landmarks = detector.detect(img,
                                        thresh,
                                        scales=scales,
                                        do_flip=flip)
-    print(c, faces.shape, landmarks.shape)
+    # print(c, faces.shape, landmarks.shape)
+    print(time.time() - st)
 
 if faces is not None:
     print('find', faces.shape[0], 'faces')

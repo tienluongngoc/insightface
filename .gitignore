@@ -101,3 +101,9 @@ ENV/
 .mypy_cache/
 
 .DS_Store
+recognition/arcface_mxnet/models
+*.zip
+detection/scrfd/models
+detection/scrfd/outputs
+detection/retinaface/models
+detection/retinaface/*.jpg

@@ -150,7 +150,7 @@ if __name__ == '__main__':
 
     if not args.input_img:
         args.input_img = osp.join(
-            osp.dirname(__file__), '../tests/data/t1.jpg')
+            osp.dirname(__file__), '/face/detection/retinaface/t1.jpg')
 
     if len(args.shape) == 1:
         input_shape = (1, 3, args.shape[0], args.shape[0])
